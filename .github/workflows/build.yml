@@ -1,0 +1,13 @@
+name: build
+
+on: [push]
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@master
+            - name: Build
+              run: |
+                   docker build https://github.com/ArmageddonKnight/LaTeX-Templates.git#master -t texlive:2021
+                   docker run -v $(pwd):/mnt -w /mnt texlive:2021 make
