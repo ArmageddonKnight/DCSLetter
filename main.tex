@@ -1,0 +1,70 @@
+%%  dcsletter.tex -- template for use with dcsletter document class
+%%
+%%  Copyright (c) 2008-2016 Francois Pitt <fpitt@cs.utoronto.ca>
+%%  last updated at 13:29 (EST) on Fri 29 Jan 2016
+%%
+%%  This work may be distributed and/or modified under the conditions of
+%%  the LaTeX Project Public License, either version 1.3 of this license
+%%  or (at your option) any later version.
+%%  The latest version of this license is in
+%%      http://www.latex-project.org/lppl.txt
+%%  and version 1.3 or later is part of all distributions of LaTeX
+%%  version 2003/12/01 or later.
+%%
+%%  This work has the LPPL maintenance status "maintained".
+%%
+%%  The Current Maintainer of this work is
+%%  Francois Pitt <fpitt@cs.utoronto.ca>.
+%%
+%%  This work consists of the files listed in the accompanying README.
+
+%%  Minimal template for letters with new visual identity DCS letterhead.
+%%  Must handle all page layout and formatting (other than the letterhead), in
+%%  particular, making sure that text does not overwrite the letterhead.
+
+%%  Note: formatting this document with \documentclass{letter} instead (and
+%%  no other change) will produce a letter whose first page can be printed on
+%%  pre-printed letterhead paper (with room for the letterhead elements).
+%%  Possible options:
+%%    - colour (default): use colour letterhead elements (header & footer)
+%%    - nocolour: use black-and-white letterhead elements (header & footer)
+\documentclass{dcsletter}
+%%  Set the page layout: 3/4" matches the margin to the left of the header
+%%  and footer -- or comment out and stick with LaTeX defaults.
+\usepackage[margin=.75in,footskip=.25in,headsep=.25in]{geometry}
+%%  Other useful packages.
+\usepackage{ragged2e}  % allow hyphenation in raggedright text
+\setlength\hfuzz{1pt}  % prevent 'Overfull \hbox'es from \RaggedRight
+\setlength\RaggedRightParindent{\parindent}  % use default \parindent
+
+\begin{document}
+
+\name{My Name}
+
+\begin{letter}
+   {Recipient's address\\
+    Somewhere in Canada}
+
+%%  With margins set at 3/4" top and bottom, the text of the letter could
+%%  overlap with the header and be too close to the footer, so shorten the
+%%  first page to leave more space between the text and the footer
+\enlargethispage{-2\baselineskip}
+%%  and start the first page with a zero-width rule 1/2" tall, so that the
+%%  text doesn't start until at least 1 1/4" from the top (with the date) --
+%%  for shorter letters, the text will be centered by default.
+\rule{0pt}{.5in}
+%%  Note: with wider margins (such as the LaTeX default), the body of the
+%%  letter is small enough that no such adjustments are necessary.
+
+%%  Turn off paragraph justification, if desired.
+\RaggedRight
+
+\opening{Dear Sir/Madam,}
+
+
+
+\closing{Sincerely,}
+
+\end{letter}
+
+\end{document}
