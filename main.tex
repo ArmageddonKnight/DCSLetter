@@ -37,13 +37,14 @@
 \setlength\hfuzz{1pt}  % prevent 'Overfull \hbox'es from \RaggedRight
 \setlength\RaggedRightParindent{\parindent}  % use default \parindent
 
+\usepackage{microtype}
+
 \begin{document}
 
-\name{My Name}
+\name{\includegraphics{figures/Bojian_Zheng-crop.pdf}}
 
 \begin{letter}
-   {Recipient's address\\
-    Somewhere in Canada}
+   {Recipient's address}
 
 %%  With margins set at 3/4" top and bottom, the text of the letter could
 %%  overlap with the header and be too close to the footer, so shorten the
@@ -62,8 +63,7 @@
 \opening{Dear Sir/Madam,}
 
 
-
-\closing{Sincerely,}
+\closing{Sincerely Yours}
 
 \end{letter}
 
