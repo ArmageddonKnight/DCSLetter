@@ -9,6 +9,9 @@ all: main.pdf
 %.pdf: %.tex Makefile $(CROPPED_PDFS)
 	pdflatex -synctex=1 -interaction=nonstopmode $<
 
+.PHONY: figures
+figures: $(CROPPED_PDFS)
+
 .PRECIOUS: $(CROPPED_PDFS)
 %-crop.pdf: %.pdf Makefile
 	pdfcrop $<
