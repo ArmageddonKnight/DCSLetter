@@ -1,0 +1,4 @@
+\DeclareFontFamily{T1}{HBP}{}
+\DeclareFontShape{T1}{HBP}{m}{n}{
+  <-> T1--HBP
+}{}

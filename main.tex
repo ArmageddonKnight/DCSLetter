@@ -37,11 +37,15 @@
 \setlength\hfuzz{1pt}  % prevent 'Overfull \hbox'es from \RaggedRight
 \setlength\RaggedRightParindent{\parindent}  % use default \parindent
 
+\usepackage[T1]{fontenc}
 \usepackage{microtype}
+
+\pdfmapfile{HBP.map}
+\newcommand\hbp[1]{{\usefont{T1}{HBP}{m}{n} #1}}
 
 \begin{document}
 
-\name{\includegraphics{figures/Bojian_Zheng-crop.pdf}}
+\name{\hbp{Bojian Zheng}}
 
 \begin{letter}
    {Recipient's address}
